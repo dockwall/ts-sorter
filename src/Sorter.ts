@@ -1,21 +1,21 @@
-export class Sorter {
-  collection: number[] | string;
+import { NumbersArrayCollection } from "./NumbersArrayCollection";
 
-  constructor(collection /* TODO: fix types */) {
+export class Sorter {
+  collection: NumbersArrayCollection;
+
+  constructor(collection: NumbersArrayCollection) {
     this.collection = collection;
   }
 
   sort(): void {
-    const { length: collectionLength } = this.collection;
+    const collectionLength = this.collection.length;
 
     for (let i = 0; i < collectionLength; i++) {
       let isSwapped = false;
 
       for (let j = 0; j < collectionLength - i - 1; j++) {
-        if (this.collection[j] > this.collection[j + 1]) {
-          const temp = this.collection[j];
-          this.collection[j] = this.collection[j + 1];
-          this.collection[j + 1] = temp;
+        if (this.collection.compare(j)) {
+          this.collection.swap(j);
           isSwapped = true;
         }
       }
