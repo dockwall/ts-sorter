@@ -11,7 +11,7 @@ export class Sorter {
     this.collection = collection;
   }
 
-  sort(): void {
+  bubbleSort(): void {
     const collectionLength = this.collection.length;
 
     for (let i = 0; i < collectionLength; i++) {
