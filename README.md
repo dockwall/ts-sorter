@@ -8,7 +8,7 @@
 
 ## Supported sorting algorithms
 
-1. Quick sort;
+1. Bubble sort;
 
 ## How to use
 
