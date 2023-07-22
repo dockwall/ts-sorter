@@ -1,31 +1,18 @@
-class Sorter {
-  collection: number[];
+import { Sorter } from "./Sorter";
+import { NumbersArrayCollection } from "./NumbersArrayCollection";
+import { CharactersCollection } from "./CharactersCollection";
 
-  constructor(collection: number[]) {
-    this.collection = collection;
-  }
+const numbersCollection = new NumbersArrayCollection([50, 10, 3, -5, 0, 1]);
+const charactersCollection = new CharactersCollection("zABCDoÖOZabcd");
 
-  sort(): void {
-    const { length: collectionLength } = this.collection;
+console.log("\nnumber[] bubble sorting");
+const numbersArraySorter = new Sorter(numbersCollection);
+console.log("Number array before sort:", numbersCollection.data);
+numbersArraySorter.bubbleSort();
+console.log("Number array after sort:", numbersCollection.data);
 
-    for (let i = 0; i < collectionLength; i++) {
-      let isSwapped = false;
-
-      for (let j = 0; j < collectionLength - i - 1; j++) {
-        if (this.collection[j] > this.collection[j + 1]) {
-          const temp = this.collection[j];
-          this.collection[j] = this.collection[j + 1];
-          this.collection[j + 1] = temp;
-          isSwapped = true;
-        }
-      }
-
-      if (!isSwapped) break;
-    }
-  }
-}
-
-const sorter = new Sorter([10, 3, -5, 0, 1]);
-console.log("Collection before sort:", sorter.collection);
-sorter.sort();
-console.log("Collection after sort:", sorter.collection);
+console.log("\nstring bubble sorting");
+const characterSorter = new Sorter(charactersCollection);
+console.log("string before sort:", charactersCollection.data);
+characterSorter.bubbleSort();
+console.log("string after sort:", charactersCollection.data);
