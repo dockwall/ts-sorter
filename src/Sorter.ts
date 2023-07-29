@@ -4,22 +4,20 @@ export interface Sortable {
   swap(leftIndex: number): void;
 }
 
-export class Sorter {
-  collection: Sortable;
-
-  constructor(collection: Sortable) {
-    this.collection = collection;
-  }
+export abstract class Sorter {
+  abstract length: number;
+  abstract compare(leftIndex: number): boolean;
+  abstract swap(leftIndex: number): void;
 
   bubbleSort(): void {
-    const collectionLength = this.collection.length;
+    const { length } = this;
 
-    for (let i = 0; i < collectionLength; i++) {
+    for (let i = 0; i < length; i++) {
       let isSwapped = false;
 
-      for (let j = 0; j < collectionLength - i - 1; j++) {
-        if (this.collection.compare(j)) {
-          this.collection.swap(j);
+      for (let j = 0; j < length - i - 1; j++) {
+        if (this.compare(j)) {
+          this.swap(j);
           isSwapped = true;
         }
       }
