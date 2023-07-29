@@ -4,7 +4,7 @@
 
 1. Arrays of numbers;
 2. Strings (human-readable sorting by natural alphabets, not UTF-16 characters codes);
-3. _\*in the pipeline\*_ Linked lists;
+3. Linked lists of numbers (example: `5 => 3 => 8`);
 
 ## Supported sorting algorithms (temporarily ascending only)
 
