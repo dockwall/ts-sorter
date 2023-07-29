@@ -1,5 +1,7 @@
 # ts-sorter - small and simple CLI sorter
 
+_btw this project is created for messing around with **TypeScript** and **some code patterns**. Work in progress_ 👷
+
 ## Supported data structures
 
 1. Arrays of numbers;
